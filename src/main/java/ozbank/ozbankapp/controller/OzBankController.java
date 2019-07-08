@@ -27,7 +27,7 @@ public class OzBankController {
 	CustomerService customerServiceImpl;
 
 	@Autowired
-	OfficerService bankingPersonnelServiceImpl;
+	OfficerService officerServiceImpl;
 
 	@Autowired
 	LoanService loanImpl;
@@ -47,9 +47,9 @@ public class OzBankController {
 	}
 
 	@PostMapping("/officer/{officerId}/approveloan/{loanId}")
-	public ResponseEntity<ResponseDto> approveLoan(@PathVariable("personnelId") Long personnelId,
+	public ResponseEntity<ResponseDto> approveLoan(@PathVariable("officerId") Long officerId,
 			@PathVariable("loanId") Long loanId) throws ParseException {
-		return new ResponseEntity<ResponseDto>(bankingPersonnelServiceImpl.approveLoan(personnelId, loanId),
+		return new ResponseEntity<ResponseDto>(officerServiceImpl.approveLoan(officerId, loanId),
 				HttpStatus.CREATED);
 	}
 

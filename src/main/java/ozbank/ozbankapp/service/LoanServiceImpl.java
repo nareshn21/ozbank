@@ -23,7 +23,6 @@ public class LoanServiceImpl implements LoanService {
 
 	@Override
 	public ResponseDto applyLoan(String customerId, CustomerLoan loan) {
-		// TODO Auto-generated method stub
 		Long custId;
 		try {
 			custId = Long.parseLong(customerId);
@@ -44,8 +43,6 @@ public class LoanServiceImpl implements LoanService {
 		} else {
 			try {
 				CustomerAcc customer = customerRepo.findById(custId).get();
-				// if (customer == null)
-				// throw new OzBankException("This Customer is not available...");
 				loan.setCustomers(customer);
 				loan.setLoanIntrestRate(12.0);
 				loan.setLoanStatus("Pending");
@@ -54,7 +51,6 @@ public class LoanServiceImpl implements LoanService {
 				throw new OzBankException("This Customer is not available...");
 			}
 		}
-		// throw new OzBankException("This Customer already apply for the");
 		return new ResponseDto("Loan Approval is in progress for the Customer...");
 
 	}

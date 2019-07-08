@@ -50,8 +50,7 @@ public class CustomerServiceImpl implements CustomerService {
 		} else {
 			throw new OzBankException("Customer's Emi is Running Can't be deleted...");
 		}
-		// TODO Auto-generated method stub
-		// return null;
+		
 	}
 
 }

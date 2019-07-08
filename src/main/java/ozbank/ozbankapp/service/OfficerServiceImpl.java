@@ -34,7 +34,6 @@ public class OfficerServiceImpl implements OfficerService {
 	@SuppressWarnings({ "deprecation", "unused" })
 	@Override
 	public ResponseDto approveLoan(Long officerId, Long loanId) throws ParseException {
-		// TODO Auto-generated method stub
 		Officer officer;
 		CustomerLoan loan;
 
@@ -74,7 +73,7 @@ public class OfficerServiceImpl implements OfficerService {
 	private Date setPaymentDate() throws ParseException {
 		DateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
 		String basePayDate = "05/Jul/2019";
-		Date payDate = formatter.parse(basePayDate);// new Date();
+		Date payDate = formatter.parse(basePayDate);
 
 		Date paymentDate = formatter.parse(formatter.format(payDate));
 
